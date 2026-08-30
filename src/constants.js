@@ -16,3 +16,26 @@ export const ROL_INFO = {
 }
 
 export const MOBILE_HIDDEN_MODULES = ['caja', 'informes', 'configuracion']
+
+export const PLAN_MODULES = {
+  basico: {
+    label: 'Basico',
+    precio: 'desde 180.000 Gs/mes',
+    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos'],
+  },
+  estandar: {
+    label: 'Estandar',
+    precio: 'desde 280.000 Gs/mes',
+    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos', 'configuracion'],
+  },
+  enterprise: {
+    label: 'Enterprise',
+    precio: 'desde 420.000 Gs/mes',
+    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'delivery', 'productos', 'informes', 'configuracion'],
+  },
+}
+
+export const moduleAllowed = (plan, modulo) => {
+  const def = PLAN_MODULES[plan]
+  return !!def && def.allowed.includes(modulo)
+}

@@ -1,0 +1,47 @@
+karuAPP — Sistema gastronómico profesional 🍽️
+
+¡Hola! Te presento karuAPP, un sistema completo para gestionar tu local gastronómico: restaurante, hamburguesería, lomitería, rotisería, pizzeria, delivery, etc.
+
+✅ LO QUE INCLUYE
+• Control de mesas (disponible, ocupada, limpieza) en tiempo real
+• Pantalla de cocina con cola de pedidos
+• Caja y cobro (efectivo, tarjeta, transferencia), vuelto y cierre de caja
+• Delivery con seguimiento de pedidos a domicilio
+• Catálogo de productos con fotos y precios
+• Inventario y alertas de stock
+• Informes de ventas y productos más vendidos
+• Funciona desde la PC o el celular
+• Pedidos y comandas con impresión (térmica/ESC/POS)
+• Facturación electrónica (SIFEN) opcional
+
+💲 PRECIO SEGÚN TU LOCAL
+El valor se ajusta al tamaño y tipo de tu negocio:
+
+• LOCALES PEQUEÑOS: desde 180.000 Gs/mes
+  - Control de mesas, cocina y caja
+  - Catálogo de productos e inventario basico
+  - Nota: sin informes, sin delivery, sin configuracion y sin impresion
+
+• LOCALES MEDIANOS: desde 280.000 Gs/mes
+  - Todo lo del plan pequeno
+  - Mas inventario completo y configuracion
+  - Impresion de comandas y tickets
+  - Nota: sin delivery y sin informes
+
+• LOCALES GRANDES / DELIVERY: desde 420.000 Gs/mes o mas
+  - ACCESO A TODO: mesas, cocina, caja, delivery, inventario, informes, configuracion, impresion y facturacion electronica
+  - Incluye SIFEN (facturacion electronica), disponible solo en este plan
+
+Consultame y te doy una cotizacion a medida sin compromiso.
+
+🎁 PRUEBA GRATIS 14 DÍAS
+• 14 días de prueba sin costo
+• Sin costo de instalación
+• Sin permanencia obligatoria
+• Cargamos tus productos, precios y tus fotos
+• Soporte y capacitación incluidos
+
+👨‍🍳 ¿QUIERES VERLO?
+Podes probar la demo online ahora mismo en karudemo.vercel.app con datos de ejemplo, ¡y contactarme por este mismo WhatsApp!
+
+📱 Escribime y coordinamos una demostración en vivo adaptada a tu negocio.

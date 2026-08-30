@@ -10,6 +10,13 @@ const getInitialDarkMode = () => {
   return saved === 'true'
 }
 
+const getInitialPlan = () => {
+  if (typeof window === 'undefined') return 'enterprise'
+  const saved = localStorage.getItem('karuapp_plan')
+  if (saved && ['basico', 'estandar', 'enterprise'].includes(saved)) return saved
+  return 'enterprise'
+}
+
 const getInitialLicense = () => {
   if (typeof window === 'undefined') return { estado: 'activa', dias_restantes: 999, mensaje: '', nombre: '' }
   const saved = localStorage.getItem('license')
@@ -26,9 +33,17 @@ const getInitialLicense = () => {
 export const useStore = create((set, get) => ({
   darkMode: getInitialDarkMode(),
   license: getInitialLicense(),
+  plan: getInitialPlan(),
   isMobile: typeof window !== 'undefined' && (window.innerWidth < 768 || (window.matchMedia('(pointer: coarse)').matches && window.innerWidth < 1280)),
 
   setIsMobile: (val) => set({ isMobile: val }),
+
+  setPlan: (plan) => {
+    if (!['basico', 'estandar', 'enterprise'].includes(plan)) return
+    localStorage.setItem('karuapp_plan', plan)
+    set({ plan })
+    window.dispatchEvent(new Event('karuappPlanChange'))
+  },
 
   toggleDarkMode: () => {
     const newMode = !get().darkMode

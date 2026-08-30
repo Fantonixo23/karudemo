@@ -4,6 +4,7 @@ import { useStore } from '../store/useStore'
 import { getApiUrl } from '../utils/api'
 import { formatGuarani } from '../utils/currency'
 import Sidebar from '../components/Sidebar'
+import PlanModal from '../components/PlanModal'
 
 const API_URL = getApiUrl()
 
@@ -40,16 +41,7 @@ const s = {
   },
 }
 
-import { MOBILE_HIDDEN_MODULES } from '../constants'
-
-const ALL_AREAS = [
-  { path: '/app/mesas', icon: 'table_restaurant', label: 'Mesas', desc: 'Gestionar mesas', modulo: 'mesas' },
-  { path: '/app/cocina', icon: 'restaurant', label: 'Cocina', desc: 'Pedidos en cocina', modulo: 'cocina' },
-  { path: '/app/caja', icon: 'point_of_sale', label: 'Caja', desc: 'Cobros y facturas', modulo: 'caja' },
-  { path: '/app/delivery', icon: 'delivery_dining', label: 'Delivery', desc: 'Pedidos a domicilio', modulo: 'delivery' },
-  { path: '/app/productos', icon: 'inventory_2', label: 'Productos', desc: 'Catalogo y stock', modulo: 'productos' },
-  { path: '/app/informes', icon: 'analytics', label: 'Informes', desc: 'Reportes y ventas', modulo: 'informes' },
-]
+import { ALL_AREAS, MOBILE_HIDDEN_MODULES, moduleAllowed } from '../constants'
 
 export default function Inicio() {
   const darkMode = useStore((state) => state.darkMode)
@@ -57,8 +49,10 @@ export default function Inicio() {
   const initDarkMode = useStore((state) => state.initDarkMode)
   const syncDarkMode = useStore((state) => state.syncDarkMode)
   const isMobile = useStore((state) => state.isMobile)
+  const plan = useStore((state) => state.plan)
   useEffect(() => { initDarkMode(); syncDarkMode() }, [])
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [showPlanModal, setShowPlanModal] = useState(false)
   const [hora, setHora] = useState(new Date())
   const [stats, setStats] = useState(null)
   const [conexion, setConexion] = useState(null)
@@ -115,6 +109,9 @@ export default function Inicio() {
           <button onClick={toggleDarkMode} style={s.btnHeader}>
             <span className="material-icons">{darkMode ? 'dark_mode' : 'light_mode'}</span>
           </button>
+          <button onClick={() => setShowPlanModal(true)} style={{ ...s.btnHeader, position: 'relative' }} title="Cambiar plan">
+            <span className="material-icons">workspace_premium</span>
+          </button>
           <button onClick={() => setSidebarOpen(true)} style={s.btnHeader}>
             <span className="material-icons">menu</span>
           </button>
@@ -159,7 +156,10 @@ export default function Inicio() {
         )}
 
         <div style={{ display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: '12px' }}>
-          {ALL_AREAS.filter(area => !isMobile || !MOBILE_HIDDEN_MODULES.includes(area.modulo)).map((area, i) => (
+          {ALL_AREAS.filter(area => {
+            if (isMobile && MOBILE_HIDDEN_MODULES.includes(area.modulo)) return false
+            return moduleAllowed(plan, area.modulo)
+          }).map((area, i) => (
             <Link key={i} to={area.path} style={{
               borderRadius: '14px', padding: '18px 10px',
               display: 'flex', flexDirection: 'column', alignItems: 'center',
@@ -268,7 +268,10 @@ export default function Inicio() {
               <button onClick={() => setSidebarOpen(false)} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', fontSize: '24px', cursor: 'pointer', padding: 0 }}>&times;</button>
             </div>
 
-            {ALL_AREAS.filter(area => !isMobile || !MOBILE_HIDDEN_MODULES.includes(area.modulo)).map((area, i) => (
+            {ALL_AREAS.filter(area => {
+              if (isMobile && MOBILE_HIDDEN_MODULES.includes(area.modulo)) return false
+              return moduleAllowed(plan, area.modulo)
+            }).map((area, i) => (
               <Link key={i} to={area.path} onClick={() => setSidebarOpen(false)} style={{
                 display: 'flex', alignItems: 'center', gap: '12px', padding: '14px 20px',
                 border: 'none', background: 'none', color: '#ccc', fontSize: '14px',
@@ -285,6 +288,14 @@ export default function Inicio() {
             ))}
           </div>
         </>
+      )}
+      {showPlanModal && (
+        <PlanModal
+          onClose={() => {
+            localStorage.setItem('karuapp_plan_chosen', 'true')
+            setShowPlanModal(false)
+          }}
+        />
       )}
       {isMobile && <Sidebar activePath="/app/inicio" />}
     </div>

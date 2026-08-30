@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useStore } from '../store/useStore'
-import { MOBILE_HIDDEN_MODULES } from '../constants'
+import { MOBILE_HIDDEN_MODULES, moduleAllowed } from '../constants'
 import { Link, useLocation } from 'react-router-dom'
 
 const ALL_ITEMS = [
@@ -17,12 +17,16 @@ const RED = '#D32F2F'
 
 export default function Sidebar({ activePath }) {
   const isMobile = useStore((state) => state.isMobile)
+  const plan = useStore((state) => state.plan)
   const [isLandscape, setIsLandscape] = useState(
     typeof window !== 'undefined' && window.innerWidth > window.innerHeight
   )
   const location = useLocation()
   const currentPath = activePath || location.pathname
-  const visibleItems = ALL_ITEMS.filter(item => !isMobile || !MOBILE_HIDDEN_MODULES.includes(item.modulo))
+  const visibleItems = ALL_ITEMS.filter(item => {
+    if (isMobile && MOBILE_HIDDEN_MODULES.includes(item.modulo)) return false
+    return moduleAllowed(plan, item.modulo)
+  })
 
   useEffect(() => {
     const check = () => setIsLandscape(window.innerWidth > window.innerHeight)
