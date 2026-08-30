@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
+import Landing from './pages/Landing'
 import Inicio from './pages/Inicio'
 import NuevaVenta from './pages/NuevaVenta'
 import Cocina from './pages/Cocina'
@@ -15,7 +16,7 @@ export default function App() {
   return (
     <FullscreenProvider>
       <Routes>
-        <Route path="/" element={<Navigate to="/app/inicio" replace />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/app/inicio" element={<Inicio />} />
         <Route path="/app/mesas" element={<NuevaVenta />} />
         <Route path="/app/cocina" element={<Cocina />} />
