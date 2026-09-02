@@ -5,6 +5,8 @@ export const ALL_AREAS = [
   { path: '/app/delivery', icon: 'delivery_dining', label: 'Delivery', desc: 'Pedidos a domicilio', modulo: 'delivery' },
   { path: '/app/informes', icon: 'analytics', label: 'Informes', desc: 'Reportes y ventas', modulo: 'informes' },
   { path: '/app/productos', icon: 'inventory_2', label: 'Productos', desc: 'Catalogo y stock', modulo: 'productos' },
+  { path: '/app/menu', icon: 'restaurant_menu', label: 'Carta', desc: 'Menu digital', modulo: 'carta' },
+  { path: '/app/reservas', icon: 'event', label: 'Reservas', desc: 'Gestionar reservas', modulo: 'reservas' },
   { path: '/app/inventario', icon: 'warehouse', label: 'Inventario', desc: 'Control de stock', modulo: 'inventario' },
 ]
 
@@ -21,17 +23,17 @@ export const PLAN_MODULES = {
   basico: {
     label: 'Basico',
     precio: 'desde 180.000 Gs/mes',
-    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos'],
+    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos', 'carta', 'reservas'],
   },
   estandar: {
     label: 'Estandar',
     precio: 'desde 280.000 Gs/mes',
-    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos', 'configuracion'],
+    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos', 'configuracion', 'carta', 'reservas'],
   },
   enterprise: {
     label: 'Enterprise',
     precio: 'desde 420.000 Gs/mes',
-    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'delivery', 'productos', 'informes', 'configuracion'],
+    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'delivery', 'productos', 'informes', 'configuracion', 'carta', 'reservas'],
   },
 }
 

@@ -6,6 +6,7 @@ import {
   RESUMEN_INFORME, VENTAS_POR_DIA, PRODUCTOS_ESTADISTICAS,
   METODOS_PAGO_INFORME, PEDIDOS_LISTA_INFORME,
   INVENTARIO_LISTA, INVENTARIO_RESUMEN, INVENTARIO_ALERTAS,
+  RESERVAS_BASE,
 } from './mockData'
 
 // --------------------------------------------------------------------
@@ -21,6 +22,8 @@ export const demoState = create(() => ({
   session: JSON.parse(JSON.stringify(CAJA_SESSION)),
   movimientos: CAJA_MOVIMIENTOS.map(m => ({ ...m })),
   pagados: PEDIDOS_PAGADOS.map(p => ({ ...p })),
+  reservas: JSON.parse(JSON.stringify(RESERVAS_BASE)),
+  nextReservaId: 100,
   nextPedidoId: 500,
   nextOrden: 7100,
 }))
@@ -75,6 +78,12 @@ function jsonResponse(obj, status = 200) {
 
 const notFound = () => jsonResponse({ success: false, error: 'No encontrado (demo)' }, 404)
 
+function hoyISO() {
+  const d = new Date()
+  const off = d.getTimezoneOffset()
+  return new Date(d.getTime() - off * 60000).toISOString().split('T')[0]
+}
+
 // --------------------------------------------------------------------
 // Resolucion de las rutas mock
 // --------------------------------------------------------------------
@@ -99,6 +108,94 @@ export function handleMockRequest(url, options = {}) {
   // ==================== PRODUCTOS / CATEGORIAS ====================
   if (method === 'GET' && path === '/productos') return jsonResponse({ success: true, productos: PRODUCTOS })
   if (method === 'GET' && path === '/categorias') return jsonResponse({ success: true, categorias: CATEGORIAS })
+
+  // ==================== CARTA (menu digital publico) ====================
+  if (method === 'GET' && path === '/carta') {
+    const categorias = CATEGORIAS
+      .map(c => ({
+        ...c,
+        icono: c.icono || 'category',
+        productos: PRODUCTOS.filter(p => p.categoria_id === c.id && p.disponible),
+      }))
+      .filter(c => c.productos.length > 0)
+    return jsonResponse({ success: true, categorias, empresa: { nombre: EMPRESA.nombre_empresa } })
+  }
+  if (method === 'GET' && path === '/qr-carta') {
+    const url = `${window.location.origin}/carta`
+    return jsonResponse({ success: true, url, qr_base64: '' })
+  }
+  if (method === 'PUT' && /^\/productos\/\d+\/carta$/.test(path)) {
+    const id = parseInt(path.split('/')[2])
+    const body = JSON.parse(options.body || '{}')
+    const p = PRODUCTOS.find(x => x.id === id)
+    if (!p) return notFound()
+    if (body.descripcion !== undefined) p.descripcion = body.descripcion
+    if (body.ingredientes !== undefined) p.ingredientes = body.ingredientes
+    if (body.notas !== undefined) p.notas = body.notas
+    if (body.disponible !== undefined) p.disponible = !!body.disponible
+    return jsonResponse({ success: true })
+  }
+
+  // ==================== RESERVAS ====================
+  const mesaFull = (mid) => {
+    const m = S().mesas.find(x => x.id === mid)
+    return m ? { id: m.id, numero: m.numero, nombre: m.nombre, capacidad: m.capacidad, estado: m.estado } : null
+  }
+  const loadReservas = (fecha) => {
+    return S().reservas
+      .filter(r => r.fecha === fecha)
+      .map(r => ({ ...r, mesa: mesaFull(r.mesa_id) }))
+  }
+  if (method === 'GET' && path === '/reservas') {
+    const fecha = u.searchParams.get('fecha') || hoyISO()
+    return jsonResponse({ success: true, reservas: loadReservas(fecha) })
+  }
+  if (method === 'POST' && path === '/reservas/crear') {
+    const body = JSON.parse(options.body || '{}')
+    const s = demoState.getState()
+    const reserva = {
+      id: s.nextReservaId,
+      fecha: body.fecha || hoyISO(),
+      hora: body.hora || '12:00',
+      duracion_min: body.duracion_min || 120,
+      mesa_id: body.mesa_id,
+      cliente_nombre: body.cliente_nombre || '',
+      cliente_telefono: body.cliente_telefono || '',
+      comensales: body.comensales || 2,
+      estado: 'pendiente',
+      nota: body.nota || '',
+    }
+    demoState.setState(s => ({ reservas: [...s.reservas, reserva], nextReservaId: s.nextReservaId + 1 }))
+    return jsonResponse({ success: true, reserva: { ...reserva, mesa: mesaFull(reserva.mesa_id) } })
+  }
+  if (method === 'PUT' && /^\/reservas\/\d+\/editar$/.test(path)) {
+    const id = parseInt(path.split('/')[2])
+    const body = JSON.parse(options.body || '{}')
+    demoState.setState(s => ({
+      reservas: s.reservas.map(r => r.id === id ? {
+        ...r,
+        hora: body.hora || r.hora,
+        duracion_min: body.duracion_min || r.duracion_min,
+        mesa_id: body.mesa_id !== undefined ? body.mesa_id : r.mesa_id,
+        cliente_nombre: body.cliente_nombre !== undefined ? body.cliente_nombre : r.cliente_nombre,
+        cliente_telefono: body.cliente_telefono !== undefined ? body.cliente_telefono : r.cliente_telefono,
+        comensales: body.comensales !== undefined ? body.comensales : r.comensales,
+        nota: body.nota !== undefined ? body.nota : r.nota,
+      } : r),
+    }))
+    return jsonResponse({ success: true })
+  }
+  if (method === 'POST' && /^\/reservas\/\d+\/estado$/.test(path)) {
+    const id = parseInt(path.split('/')[2])
+    const body = JSON.parse(options.body || '{}')
+    demoState.setState(s => ({ reservas: s.reservas.map(r => r.id === id ? { ...r, estado: body.estado } : r) }))
+    return jsonResponse({ success: true })
+  }
+  if (method === 'DELETE' && /^\/reservas\/\d+\/eliminar$/.test(path)) {
+    const id = parseInt(path.split('/')[2])
+    demoState.setState(s => ({ reservas: s.reservas.filter(r => r.id !== id) }))
+    return jsonResponse({ success: true })
+  }
 
   // ==================== PEDIDOS (crear / mesa / estado / delivery) ====================
   if (method === 'POST' && path === '/pedidos/crear') {

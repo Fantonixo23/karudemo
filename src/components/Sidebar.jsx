@@ -9,6 +9,8 @@ const ALL_ITEMS = [
   { path: '/app/cocina', icon: 'restaurant', label: 'Cocina', modulo: 'cocina' },
   { path: '/app/caja', icon: 'point_of_sale', label: 'Caja', modulo: 'caja' },
   { path: '/app/delivery', icon: 'delivery_dining', label: 'Delivery', modulo: 'delivery' },
+  { path: '/app/menu', icon: 'restaurant_menu', label: 'Carta', modulo: 'carta' },
+  { path: '/app/reservas', icon: 'event', label: 'Reservas', modulo: 'reservas' },
   { path: '/app/productos', icon: 'inventory_2', label: 'Productos', modulo: 'productos' },
   { path: '/app/informes', icon: 'analytics', label: 'Informes', modulo: 'informes' },
 ]

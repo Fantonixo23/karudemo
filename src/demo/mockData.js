@@ -29,10 +29,10 @@ export const CATEGORIAS = [
 
 // ---------------- PRODUCTOS (19) ----------------
 export const PRODUCTOS = [
-  { id: 1, nombre: 'Hamburguesa Clasica', descripcion: 'Deliciosa hamburguesa con queso', precio: 25000, categoria_id: 1, disponible: true, imagen: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300', variantes: [
+  { id: 1, nombre: 'Hamburguesa Clasica', descripcion: 'Deliciosa hamburguesa con queso', ingredientes: 'Pan brioche, carne 150g, queso cheddar, lechuga y tomate', notas: 'Recomendada a punto medio', precio: 25000, categoria_id: 1, disponible: true, imagen: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300', variantes: [
     { nombre: 'Simple', precio_extra: 0 }, { nombre: 'Doble', precio_extra: 10000 }, { nombre: 'Especial', precio_extra: 20000 },
   ] },
-  { id: 2, nombre: 'Hamburguesa BBQ', descripcion: 'Hamburguesa con salsa BBQ', precio: 22000, categoria_id: 1, disponible: true, imagen: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300', variantes: [
+  { id: 2, nombre: 'Hamburguesa BBQ', descripcion: 'Hamburguesa con salsa BBQ', ingredientes: 'Pan, carne 150g, cebolla caramelizada, salsa BBQ ahumada', notas: 'Con cheddar extra', precio: 22000, categoria_id: 1, disponible: true, imagen: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300', variantes: [
     { nombre: 'Simple', precio: 15000 }, { nombre: 'Doble', precio: 22000 },
   ] },
   { id: 3, nombre: 'Hamburguesa Vegetariana', descripcion: 'Opcion veggie con vegetales frescos', precio: 20000, categoria_id: 1, disponible: true, imagen: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=300', variantes: [
@@ -270,3 +270,49 @@ export const INVENTARIO_RESUMEN = {
 }
 
 export const INVENTARIO_ALERTAS = INVENTARIO_LISTA.filter(x => x.estado_stock === 'bajo')
+
+// ---------------- RESERVAS ----------------
+function hoyISO() {
+  const d = new Date()
+  const off = d.getTimezoneOffset()
+  return new Date(d.getTime() - off * 60000).toISOString().split('T')[0]
+}
+
+export const RESERVAS_BASE = [
+  {
+    id: 1,
+    fecha: hoyISO(),
+    hora: '12:00',
+    duracion_min: 120,
+    mesa_id: 4,
+    cliente_nombre: 'Carlos Benitez',
+    cliente_telefono: '0981 111 222',
+    comensales: 4,
+    estado: 'confirmada',
+    nota: 'Mesa cerca de la ventana',
+  },
+  {
+    id: 2,
+    fecha: hoyISO(),
+    hora: '13:00',
+    duracion_min: 120,
+    mesa_id: 9,
+    cliente_nombre: 'Maria Acosta',
+    cliente_telefono: '0962 333 444',
+    comensales: 2,
+    estado: 'pendiente',
+    nota: '',
+  },
+  {
+    id: 3,
+    fecha: hoyISO(),
+    hora: '20:30',
+    duracion_min: 150,
+    mesa_id: 12,
+    cliente_nombre: 'Juan Gimenez',
+    cliente_telefono: '0973 555 666',
+    comensales: 6,
+    estado: 'pendiente',
+    nota: 'Cumpleaños, pedir torta con velas',
+  },
+]
