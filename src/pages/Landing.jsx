@@ -55,8 +55,8 @@ export default function Landing() {
         <h1 style={{ fontSize: '42px', fontWeight: '900', margin: '24px 0 12px', letterSpacing: '0.5px' }}>
           Gestion de restaurant <span style={{ color: '#FF0000' }}>simple y completa</span>
         </h1>
-        <p style={{ fontSize: '17px', color: '#bbb', lineHeight: 1.6, margin: '0 auto 16px', maxWidth: '560px' }}>
-          Controla Todo el sistema desde la palma de tu mano
+        <p style={{ fontSize: '21px', color: '#fff', lineHeight: 1.5, margin: '0 auto 16px', maxWidth: '560px' }}>
+          Controla tu local desde la <span style={{ color: '#FF0000', fontWeight: '800' }}>palma de tu mano</span>
         </p>
         <p style={{ color: '#999', fontSize: '14px', lineHeight: 1.6, margin: '0 auto 32px', maxWidth: '560px' }}>
           El sistema se adapta al cliente: usalo como mejor te parezca, a tu manera, a tu estilo.
