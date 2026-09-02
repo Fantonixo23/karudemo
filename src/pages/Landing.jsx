@@ -85,6 +85,9 @@ export default function Landing() {
         <p style={{ color: '#777', fontSize: '13px', marginTop: '16px' }}>
           Demostracion con datos de ejemplo · sin necesidad de instalar nada
         </p>
+        <p style={{ color: '#999', fontSize: '13px', marginTop: '8px' }}>
+          Le recomendamos encarecidamente que pruebe con una notebook/pc de escritorio para mejor experiencia de usuario.
+        </p>
       </section>
 
       {/* FEATURES */}
