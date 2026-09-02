@@ -55,9 +55,11 @@ export default function Landing() {
         <h1 style={{ fontSize: '42px', fontWeight: '900', margin: '24px 0 12px', letterSpacing: '0.5px' }}>
           Gestion de restaurant <span style={{ color: '#FF0000' }}>simple y completa</span>
         </h1>
-        <p style={{ fontSize: '17px', color: '#bbb', lineHeight: 1.6, margin: '0 auto 32px', maxWidth: '560px' }}>
-          Controla las mesas, la cocina, los cobros y el delivery con una sola aplicacion,
-          desde la PC o el celular.
+        <p style={{ fontSize: '17px', color: '#bbb', lineHeight: 1.6, margin: '0 auto 16px', maxWidth: '560px' }}>
+          Controla Todo el sistema desde la palma de tu mano
+        </p>
+        <p style={{ color: '#999', fontSize: '14px', lineHeight: 1.6, margin: '0 auto 32px', maxWidth: '560px' }}>
+          El sistema se adapta al cliente: usalo como mejor te parezca, a tu manera, a tu estilo.
         </p>
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <button
