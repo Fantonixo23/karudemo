@@ -106,11 +106,11 @@ export default function PlanModal({ onClose }) {
                     return (
                       <span key={i} style={{
                         fontSize: '11px',
-                        color: esSifen ? '#8B1A2B' : (darkMode ? '#ccc' : '#555'),
+                        color: esSifen ? '#F9A825' : (darkMode ? '#ccc' : '#555'),
                         fontWeight: esSifen ? '800' : '400',
                         display: 'flex', alignItems: 'center', gap: '5px',
                       }}>
-                        <span className="material-icons" style={{ fontSize: '13px', color: esSifen ? '#8B1A2B' : '#4CAF50' }}>{esSifen ? 'verified' : 'check'}</span>
+                        <span className="material-icons" style={{ fontSize: '13px', color: esSifen ? '#F9A825' : '#4CAF50' }}>{esSifen ? 'verified' : 'check'}</span>
                         {inc}
                       </span>
                     )
