@@ -17,20 +17,23 @@ karuAPP — Sistema gastronómico profesional 🍽️
 💲 PRECIO SEGÚN TU LOCAL
 El valor se ajusta al tamaño y tipo de tu negocio:
 
-• LOCALES PEQUEÑOS: desde 180.000 Gs/mes
+• LOCALES PEQUEÑOS: desde 230.000 Gs/mes
   - Control de mesas, cocina y caja
   - Catálogo de productos e inventario basico
   - Nota: sin informes, sin delivery, sin configuracion y sin impresion
 
-• LOCALES MEDIANOS: desde 280.000 Gs/mes
+• LOCALES MEDIANOS (EL MÁS VENDIDO): desde 350.000 Gs/mes
   - Todo lo del plan pequeno
-  - Mas inventario completo y configuracion
+  - Mas inventario completo, delivery y configuracion
   - Impresion de comandas y tickets
-  - Nota: sin delivery y sin informes
+  - Incluye SIFEN (facturacion electronica)
+  - Nota: sin informes
 
-• LOCALES GRANDES / DELIVERY: desde 420.000 Gs/mes o mas
+• LOCALES GRANDES / PROFESIONALES: desde 460.000 Gs/mes o mas
   - ACCESO A TODO: mesas, cocina, caja, delivery, inventario, informes, configuracion, impresion y facturacion electronica
-  - Incluye SIFEN (facturacion electronica), disponible solo en este plan
+  - Ideal para negocios profesionales y restaurantes complejos
+  - Incluye Carta Digital, Reservas e Informes
+  - Incluye SIFEN (facturacion electronica)
 
 Consultame y te doy una cotizacion a medida sin compromiso.
 

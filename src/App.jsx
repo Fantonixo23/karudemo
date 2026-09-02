@@ -11,6 +11,7 @@ import Inventario from './pages/Inventario'
 import Reservas from './pages/Reservas'
 import Menu from './pages/Menu'
 import Carta from './pages/Carta'
+import Configuracion from './pages/Configuracion'
 import { FullscreenProvider } from './hooks/useFullscreen.jsx'
 import { useMediaQuery } from './hooks/useMediaQuery'
 import { useStore } from './store/useStore'
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="/app/inventario" element={<RutaProtegida modulo="inventario"><Inventario /></RutaProtegida>} />
         <Route path="/app/reservas" element={<RutaProtegida modulo="reservas"><Reservas /></RutaProtegida>} />
         <Route path="/app/menu" element={<RutaProtegida modulo="carta"><Menu /></RutaProtegida>} />
+        <Route path="/app/configuracion" element={<RutaProtegida modulo="configuracion"><Configuracion /></RutaProtegida>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <PlanGate />

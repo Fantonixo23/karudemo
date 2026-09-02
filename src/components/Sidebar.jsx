@@ -14,6 +14,7 @@ const ALL_ITEMS = [
   { path: '/app/productos', icon: 'inventory_2', label: 'Productos', modulo: 'productos' },
   { path: '/app/inventario', icon: 'warehouse', label: 'Inventario', modulo: 'inventario' },
   { path: '/app/informes', icon: 'analytics', label: 'Informes', modulo: 'informes' },
+  { path: '/app/configuracion', icon: 'settings', label: 'Config', modulo: 'configuracion' },
 ]
 
 const RED = '#D32F2F'

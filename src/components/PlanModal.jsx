@@ -7,7 +7,7 @@ const PLANES = [
     id: 'basico',
     icon: 'storefront',
     nombre: 'Basico',
-    precio: 'desde 180.000 Gs/mes',
+    precio: 'desde 230.000 Gs/mes',
     desc: 'Para locales pequenos',
     incluye: ['Mesas', 'Cocina', 'Caja', 'Productos'],
   },
@@ -15,18 +15,18 @@ const PLANES = [
     id: 'estandar',
     icon: 'store',
     nombre: 'Estandar',
-    precio: 'desde 280.000 Gs/mes',
-    desc: 'Para locales medianos',
-    incluye: ['Todo lo Basico', 'Configuracion', 'Impresion'],
+    precio: 'desde 350.000 Gs/mes',
+    desc: 'El mas vendido. Para locales medianos en crecimiento',
+    incluye: ['Todo lo Basico', 'Delivery', 'Inventario', 'Configuracion', 'Impresion', 'SIFEN (facturacion electronica)'],
+    destacado: true,
   },
   {
     id: 'enterprise',
     icon: 'apartment',
     nombre: 'Enterprise',
-    precio: 'desde 420.000 Gs/mes',
-    desc: 'Acceso a todo',
-    incluye: ['Todo lo Estandar', 'Delivery', 'Informes', 'SIFEN'],
-    destacado: true,
+    precio: 'desde 460.000 Gs/mes',
+    desc: 'Ideal para negocios profesionales y restaurantes complejos',
+    incluye: ['Todo lo Estandar', 'Carta Digital', 'Reservas', 'Informes', 'SIFEN (facturacion electronica)'],
   },
 ]
 
@@ -101,12 +101,20 @@ export default function PlanModal({ onClose }) {
                 <span style={{ fontSize: '12px', fontWeight: '700', color: '#8B1A2B' }}>{p.precio}</span>
                 <span style={{ fontSize: '11px', color: darkMode ? 'rgba(255,255,255,0.4)' : '#999' }}>{p.desc}</span>
                 <div style={{ marginTop: '4px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  {p.incluye.map((inc, i) => (
-                    <span key={i} style={{ fontSize: '11px', color: darkMode ? '#ccc' : '#555', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                      <span className="material-icons" style={{ fontSize: '13px', color: '#4CAF50' }}>check</span>
-                      {inc}
-                    </span>
-                  ))}
+                  {p.incluye.map((inc, i) => {
+                    const esSifen = inc.toLowerCase().includes('sifen')
+                    return (
+                      <span key={i} style={{
+                        fontSize: '11px',
+                        color: esSifen ? '#8B1A2B' : (darkMode ? '#ccc' : '#555'),
+                        fontWeight: esSifen ? '800' : '400',
+                        display: 'flex', alignItems: 'center', gap: '5px',
+                      }}>
+                        <span className="material-icons" style={{ fontSize: '13px', color: esSifen ? '#8B1A2B' : '#4CAF50' }}>{esSifen ? 'verified' : 'check'}</span>
+                        {inc}
+                      </span>
+                    )
+                  })}
                 </div>
               </button>
             )
