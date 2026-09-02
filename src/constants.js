@@ -23,12 +23,12 @@ export const PLAN_MODULES = {
   basico: {
     label: 'Basico',
     precio: 'desde 180.000 Gs/mes',
-    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos', 'carta', 'reservas'],
+    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos'],
   },
   estandar: {
     label: 'Estandar',
     precio: 'desde 280.000 Gs/mes',
-    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos', 'configuracion', 'carta', 'reservas'],
+    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos', 'configuracion'],
   },
   enterprise: {
     label: 'Enterprise',
