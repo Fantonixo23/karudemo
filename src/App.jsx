@@ -7,6 +7,7 @@ import Caja from './pages/Caja'
 import Delivery from './pages/Delivery'
 import Informes from './pages/Informes'
 import Productos from './pages/Productos'
+import Inventario from './pages/Inventario'
 import Reservas from './pages/Reservas'
 import Menu from './pages/Menu'
 import Carta from './pages/Carta'
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/app/delivery" element={<RutaProtegida modulo="delivery"><Delivery /></RutaProtegida>} />
         <Route path="/app/informes" element={<RutaProtegida modulo="informes"><Informes /></RutaProtegida>} />
         <Route path="/app/productos" element={<RutaProtegida modulo="productos"><Productos /></RutaProtegida>} />
+        <Route path="/app/inventario" element={<RutaProtegida modulo="inventario"><Inventario /></RutaProtegida>} />
         <Route path="/app/reservas" element={<RutaProtegida modulo="reservas"><Reservas /></RutaProtegida>} />
         <Route path="/app/menu" element={<RutaProtegida modulo="carta"><Menu /></RutaProtegida>} />
         <Route path="*" element={<Navigate to="/" replace />} />

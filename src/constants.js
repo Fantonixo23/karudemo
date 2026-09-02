@@ -28,7 +28,7 @@ export const PLAN_MODULES = {
   estandar: {
     label: 'Estandar',
     precio: 'desde 280.000 Gs/mes',
-    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'productos', 'configuracion'],
+    allowed: ['inicio', 'mesas', 'cocina', 'caja', 'delivery', 'productos', 'inventario', 'configuracion'],
   },
   enterprise: {
     label: 'Enterprise',
