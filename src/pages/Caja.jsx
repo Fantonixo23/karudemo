@@ -718,7 +718,7 @@ export default function Caja() {
             <span className="material-icons" style={{ fontSize: '16px', verticalAlign: 'middle', marginRight: '6px' }}>delivery_dining</span>
             Delivery
             {deliveryPedidos.filter(p => ['listo', 'entregado'].includes(p.estado)).length > 0 && (
-              <span style={{ marginLeft: '6px', background: '#F44336', color: 'white', borderRadius: '50%', padding: '1px 6px', fontSize: '11px' }}>
+              <span style={{ marginLeft: '6px', background: '#D32F2F', color: 'white', borderRadius: '50%', padding: '1px 6px', fontSize: '11px' }}>
                 {deliveryPedidos.filter(p => ['listo', 'entregado'].includes(p.estado)).length}
               </span>
             )}

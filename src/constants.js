@@ -12,7 +12,7 @@ export const ALL_AREAS = [
 ]
 
 export const ROL_INFO = {
-  administrador: { label: 'Administrador', color: '#F44336' },
+  administrador: { label: 'Administrador', color: '#D32F2F' },
   cajero: { label: 'Cajero', color: '#1976D2' },
   mesero: { label: 'Mesero', color: '#4CAF50' },
   cocina: { label: 'Cocina', color: '#FF9800' },

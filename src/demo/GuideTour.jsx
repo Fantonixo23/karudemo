@@ -4,7 +4,7 @@ import { useGuide, GUIDE_STEPS } from './guideState'
 import { demoState } from './mockApi'
 
 const ACCENT = '#4CAF50'
-const RED = '#F44336'
+const RED = '#D32F2F'
 const ORANGE = '#8B1A2B'
 
 export default function GuideTour() {

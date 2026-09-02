@@ -104,7 +104,7 @@ export default function Inicio() {
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <div style={{ textAlign: 'right', marginRight: '4px' }}>
-            <div style={{ fontSize: '14px', fontWeight: '600', color: '#F44336', lineHeight: 1.2 }}>{horaStr}</div>
+            <div style={{ fontSize: '14px', fontWeight: '600', color: '#D32F2F', lineHeight: 1.2 }}>{horaStr}</div>
             <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.5)', textTransform: 'capitalize' }}>{fechaStr}</div>
           </div>
           <button onClick={toggleDarkMode} style={s.btnHeader}>
@@ -180,7 +180,7 @@ export default function Inicio() {
               border: '1px solid rgba(244,67,54,0.25)',
               background: darkMode ? 'rgba(244,67,54,0.1)' : 'rgba(244,67,54,0.06)',
             }}>
-              <div style={{ fontSize: '20px', fontWeight: '800', color: '#F44336' }}>{stats.mesas_ocupadas}</div>
+              <div style={{ fontSize: '20px', fontWeight: '800', color: '#D32F2F' }}>{stats.mesas_ocupadas}</div>
               <div style={{ fontSize: '10px', color: darkMode ? 'rgba(255,255,255,0.5)' : '#888', marginTop: '2px' }}>Mesas ocupadas</div>
             </div>
             <div style={{
@@ -213,7 +213,7 @@ export default function Inicio() {
                 background: 'rgba(244,67,54,0.12)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center'
               }}>
-                <span className="material-icons" style={{ fontSize: '22px', color: '#F44336' }}>{area.icon}</span>
+                <span className="material-icons" style={{ fontSize: '22px', color: '#D32F2F' }}>{area.icon}</span>
               </div>
               <span style={{ fontSize: '11px', fontWeight: '700', color: darkMode ? '#fff' : '#1a1a1a', textAlign: 'center', lineHeight: 1.2 }}>{area.label}</span>
             </Link>
@@ -276,7 +276,7 @@ export default function Inicio() {
               </div>
               <button onClick={() => setShowConexion(false)}
                 style={{ marginTop: '16px', padding: '10px 30px', borderRadius: '10px',
-                  border: 'none', background: '#F44336', color: 'white', cursor: 'pointer',
+                  border: 'none', background: '#D32F2F', color: 'white', cursor: 'pointer',
                   fontWeight: '600' }}>Cerrar</button>
             </div>
           </div>
@@ -303,7 +303,7 @@ export default function Inicio() {
             transform: 'translateX(0)', transition: 'transform 0.25s'
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '18px 20px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-              <span style={{ color: '#F44336', fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px' }}>Menu</span>
+              <span style={{ color: '#D32F2F', fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '1px' }}>Menu</span>
               <button onClick={() => setSidebarOpen(false)} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.5)', fontSize: '24px', cursor: 'pointer', padding: 0 }}>&times;</button>
             </div>
 
@@ -318,7 +318,7 @@ export default function Inicio() {
                 borderBottom: '1px solid rgba(255,255,255,0.04)',
                 transition: 'background 0.15s'
               }}>
-                <span className="material-icons" style={{ fontSize: '20px', color: '#F44336' }}>{area.icon}</span>
+                <span className="material-icons" style={{ fontSize: '20px', color: '#D32F2F' }}>{area.icon}</span>
                 <div>
                   <div style={{ fontWeight: '600' }}>{area.label}</div>
                   <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)' }}>{area.desc}</div>

@@ -140,9 +140,9 @@ export default function Carta() {
             {categorias.map(cat => (
               <button key={cat.id} onClick={() => irACategoria(cat.id)} style={{
                 flexShrink: 0, padding: "6px 16px", borderRadius: 20,
-                border: categoriaActiva === cat.id ? "1.5px solid #F44336" : "1px solid rgba(255,255,255,0.12)",
+                border: categoriaActiva === cat.id ? "1.5px solid #D32F2F" : "1px solid rgba(255,255,255,0.12)",
                 background: categoriaActiva === cat.id ? "rgba(244,67,54,0.15)" : "rgba(255,255,255,0.05)",
-                color: categoriaActiva === cat.id ? "#F44336" : "rgba(255,255,255,0.55)",
+                color: categoriaActiva === cat.id ? "#D32F2F" : "rgba(255,255,255,0.55)",
                 fontSize: 13, fontWeight: categoriaActiva === cat.id ? 700 : 400,
                 cursor: "pointer", whiteSpace: "nowrap", transition: "all 0.15s"
               }}>{cat.nombre}</button>
@@ -164,7 +164,7 @@ export default function Carta() {
             style={{ marginBottom: 28, scrollMarginTop: 140 }}>
 
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-              <span className="material-icons" style={{ fontSize: 20, color: "#F44336" }}>
+              <span className="material-icons" style={{ fontSize: 20, color: "#D32F2F" }}>
                 {cat.icono || "category"}
               </span>
               <h2 style={{ margin: 0, fontSize: 17, fontWeight: 700 }}>{cat.nombre}</h2>
