@@ -56,39 +56,14 @@ export default function Landing() {
           Gestion de restaurant <span style={{ color: '#FF0000' }}>simple y completa</span>
         </h1>
         <p style={{ fontSize: '21px', color: '#fff', lineHeight: 1.5, margin: '0 auto 16px', maxWidth: '560px' }}>
-          Controla tu local desde la <span style={{ color: '#FF0000', fontWeight: '800' }}>palma de tu mano</span>
+          <span style={{ color: '#FFFFFF', fontWeight: '900', textTransform: 'uppercase' }}>"CONTROLA TU LOCAL DESDE LA PALMA DE TU MANO"</span>
         </p>
         <p style={{ color: '#999', fontSize: '14px', lineHeight: 1.6, margin: '0 auto 32px', maxWidth: '560px' }}>
           El sistema se adapta al cliente: usalo como mejor te parezca, a tu manera, a tu estilo.
         </p>
-        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <button
-            onClick={() => navigate('/app/inicio')}
-            style={{
-              padding: '15px 34px', borderRadius: '12px', border: 'none', cursor: 'pointer',
-              background: 'linear-gradient(135deg, #8B1A2B, #B71C1C)', color: 'white',
-              fontWeight: '800', fontSize: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
-            }}
-          >
-            ▶ Probar la demo gratis
-          </button>
-          <a
-            href="https://wa.me/595992609484?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20karuAPP"
-            target="_blank" rel="noopener noreferrer"
-            style={{
-              padding: '15px 34px', borderRadius: '12px', cursor: 'pointer',
-              background: '#25D366', color: 'white', fontWeight: '800', fontSize: '16px',
-              textDecoration: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
-            }}
-          >
-            💬 Contactar al WhatsApp
-          </a>
-        </div>
-        <p style={{ color: '#777', fontSize: '13px', marginTop: '16px' }}>
-          Demostracion con datos de ejemplo · sin necesidad de instalar nada
-        </p>
-        <p style={{ color: '#999', fontSize: '13px', marginTop: '8px' }}>
-          Le recomendamos encarecidamente que pruebe con una notebook/pc de escritorio para mejor experiencia de usuario.
+        <p style={{ color: '#ccc', fontSize: '16px', lineHeight: 1.6, margin: '0 auto', maxWidth: '620px' }}>
+          Un sistema profesional y completo, diseñado para adaptarse a la forma de trabajo de cada cliente,
+          con una interfaz intuitiva y de facil comprension.
         </p>
       </section>
 
