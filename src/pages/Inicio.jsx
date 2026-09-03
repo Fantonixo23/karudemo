@@ -57,7 +57,6 @@ export default function Inicio() {
   const [stats, setStats] = useState(null)
   const [conexion, setConexion] = useState(null)
   const [showConexion, setShowConexion] = useState(false)
-  const [showPlanTooltip, setShowPlanTooltip] = useState(true)
 
   useEffect(() => {
     const t = setInterval(() => setHora(new Date()), 1000)
@@ -111,45 +110,33 @@ export default function Inicio() {
             <span className="material-icons">{darkMode ? 'dark_mode' : 'light_mode'}</span>
           </button>
           <div style={{ position: 'relative' }}>
-            <button onClick={() => { setShowPlanModal(true); setShowPlanTooltip(false) }} style={s.btnHeader} title="Cambiar plan">
+            <button onClick={() => setShowPlanModal(true)} style={s.btnHeader} title="Cambiar plan">
               <span className="material-icons">workspace_premium</span>
             </button>
-            {showPlanTooltip && (
-              <>
+            <div style={{
+              position: 'absolute', top: '46px', left: '50%', transform: 'translateX(-50%)', zIndex: 3000,
+              background: darkMode ? '#2a2a2a' : 'white',
+              borderRadius: '12px', padding: '12px 16px',
+              boxShadow: '0 10px 40px rgba(0,0,0,0.35)',
+              border: `1px solid ${darkMode ? 'rgba(139,26,43,0.4)' : 'rgba(139,26,43,0.25)'}`,
+              width: '200px',
+            }}>
+              <div style={{ position: 'absolute', top: '-10px', left: '50%', transform: 'translateX(-50%)' }}>
                 <div style={{
-                  position: 'absolute', top: '46px', right: '-60px', zIndex: 3000,
+                  width: '20px', height: '20px',
                   background: darkMode ? '#2a2a2a' : 'white',
-                  borderRadius: '12px', padding: '12px 16px',
-                  boxShadow: '0 10px 40px rgba(0,0,0,0.35)',
-                  border: `1px solid ${darkMode ? 'rgba(139,26,43,0.4)' : 'rgba(139,26,43,0.25)'}`,
-                  width: '200px',
-                }}>
-                  <div style={{ position: 'absolute', top: '-10px', left: '50%', transform: 'translateX(-50%)' }}>
-                    <div style={{
-                      width: '20px', height: '20px',
-                      background: darkMode ? '#2a2a2a' : 'white',
-                      borderLeft: `1px solid ${darkMode ? 'rgba(139,26,43,0.4)' : 'rgba(139,26,43,0.25)'}`,
-                      borderTop: `1px solid ${darkMode ? 'rgba(139,26,43,0.4)' : 'rgba(139,26,43,0.25)'}`,
-                      transform: 'rotate(45deg)',
-                    }} />
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span className="material-icons" style={{ fontSize: '20px', color: '#8B1A2B' }}>workspace_premium</span>
-                    <span style={{ fontSize: '13px', fontWeight: '800', color: darkMode ? '#fff' : '#1a1a1a' }}>
-                      Cambia el plan seleccionado aquí
-                    </span>
-                  </div>
-                  <button
-                    onClick={() => setShowPlanTooltip(false)}
-                    style={{
-                      position: 'absolute', top: '4px', right: '4px', background: 'none',
-                      border: 'none', color: darkMode ? 'rgba(255,255,255,0.4)' : '#999',
-                      cursor: 'pointer', fontSize: '14px', padding: '2px 4px', lineHeight: 1,
-                    }}
-                  >&times;</button>
-                </div>
-              </>
-            )}
+                  borderLeft: `1px solid ${darkMode ? 'rgba(139,26,43,0.4)' : 'rgba(139,26,43,0.25)'}`,
+                  borderTop: `1px solid ${darkMode ? 'rgba(139,26,43,0.4)' : 'rgba(139,26,43,0.25)'}`,
+                  transform: 'rotate(45deg)',
+                }} />
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span className="material-icons" style={{ fontSize: '20px', color: '#8B1A2B' }}>workspace_premium</span>
+                <span style={{ fontSize: '13px', fontWeight: '800', color: darkMode ? '#fff' : '#1a1a1a' }}>
+                  Selecciona un plan
+                </span>
+              </div>
+            </div>
           </div>
           <button onClick={() => setSidebarOpen(true)} style={s.btnHeader}>
             <span className="material-icons">menu</span>

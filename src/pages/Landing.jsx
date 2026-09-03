@@ -9,6 +9,7 @@ const FEATURES = [
   { icon: 'analytics', titulo: 'Informes', desc: 'Ventas, productos mas vendidos y reportes.' },
   { icon: 'menu_book', titulo: 'Menu digital', desc: 'Carta digital con fotos de tus platos, precios y descripciones, que tus clientes ven al escanear un codigo QR.' },
   { icon: 'event_available', titulo: 'Reservas', desc: 'Gestion de reservas de mesas de forma facil y organizada.' },
+  { icon: 'settings', titulo: 'Configuracion', desc: 'Personaliza tu negocio: nombre, RUC, tamano de impresion y mas, todo a tu gusto.' },
 ]
 
 export default function Landing() {
@@ -61,7 +62,7 @@ export default function Landing() {
           <span style={{ color: '#FFFFFF', fontWeight: '900', textTransform: 'uppercase' }}>"CONTROLA TU LOCAL DESDE LA PALMA DE TU MANO"</span>
         </p>
         <p style={{ color: '#999', fontSize: '14px', lineHeight: 1.6, margin: '0 auto 32px', maxWidth: '560px' }}>
-          El sistema se adapta al cliente: usalo como mejor te parezca, a tu manera, a tu estilo.
+          Una solucion que se adapta a la forma de trabajar de cada negocio: flexible, personalizable y a medida de tus necesidades.
         </p>
         <p style={{ color: '#ccc', fontSize: '16px', lineHeight: 1.6, margin: '0 auto', maxWidth: '620px' }}>
           Un sistema profesional y completo, diseñado para adaptarse a la forma de trabajo de cada cliente,
