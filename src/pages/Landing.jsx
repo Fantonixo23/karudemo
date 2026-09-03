@@ -9,7 +9,7 @@ const FEATURES = [
   { icon: 'analytics', titulo: 'Informes', desc: 'Ventas, productos mas vendidos y reportes.' },
   { icon: 'menu_book', titulo: 'Menu digital', desc: 'Carta digital con fotos de tus platos, precios y descripciones, que tus clientes ven al escanear un codigo QR.' },
   { icon: 'event_available', titulo: 'Reservas', desc: 'Gestion de reservas de mesas de forma facil y organizada.' },
-  { icon: 'settings', titulo: 'Configuracion', desc: 'Personaliza tu negocio: nombre, RUC, tamano de impresion y mas, todo a tu gusto.' },
+  { icon: 'settings', titulo: 'Configuracion', desc: 'Personaliza tu negocio: nombre, RUC, tamano de impresion y mas, con facturacion electronica SIFEN incluida.' },
 ]
 
 export default function Landing() {
