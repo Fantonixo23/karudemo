@@ -55,7 +55,7 @@ export default function Landing() {
       <section style={{ textAlign: 'center', padding: '70px 24px 40px', maxWidth: '760px', margin: '0 auto' }}>
         <img src="/logo.png" alt="karuAPP" width="88" height="88" style={{ borderRadius: '20px', boxShadow: '0 4px 14px rgba(0,0,0,0.4)' }} />
         <h1 style={{ fontSize: '42px', fontWeight: '900', margin: '24px 0 12px', letterSpacing: '0.5px' }}>
-          <span style={{ color: '#FF0000' }}>karuAPP</span> Sistema gastronomico
+          <span style={{ color: '#FF0000' }}>KaruAPP</span> Sistema gastronomico
         </h1>
         <p style={{ fontSize: '21px', color: '#fff', lineHeight: 1.5, margin: '0 auto 16px', maxWidth: '560px' }}>
           <span style={{ color: '#FFFFFF', fontWeight: '900', textTransform: 'uppercase' }}>"CONTROLA TU LOCAL DESDE LA PALMA DE TU MANO"</span>
@@ -67,6 +67,29 @@ export default function Landing() {
           Un sistema profesional y completo, diseñado para adaptarse a la forma de trabajo de cada cliente,
           con una interfaz intuitiva y de facil comprension.
         </p>
+        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', margin: '32px 0 0' }}>
+          <button
+            onClick={() => navigate('/app/inicio')}
+            style={{
+              padding: '15px 34px', borderRadius: '12px', border: 'none', cursor: 'pointer',
+              background: 'linear-gradient(135deg, #8B1A2B, #B71C1C)', color: 'white',
+              fontWeight: '800', fontSize: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
+            }}
+          >
+            ▶ Probar demo
+          </button>
+          <a
+            href="https://wa.me/595992609484?text=Hola!%20Quiero%20saber%20mas%20informacion%20acerca%20de%20KaruAPP"
+            target="_blank" rel="noopener noreferrer"
+            style={{
+              padding: '15px 34px', borderRadius: '12px', cursor: 'pointer',
+              background: '#25D366', color: 'white', fontWeight: '800', fontSize: '16px',
+              textDecoration: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
+            }}
+          >
+            💬 Contactanos
+          </a>
+        </div>
       </section>
 
       {/* FEATURES */}
