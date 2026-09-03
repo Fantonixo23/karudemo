@@ -174,7 +174,7 @@ export default function Inventario() {
     btn: { width: '36px', height: '36px', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '8px', background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.8)', fontSize: '18px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', transition: 'all 0.15s' },
     title: { fontSize: '22px', fontWeight: '800', letterSpacing: '0.5px' },
     kpiCard: (dm) => ({ borderRadius: '14px', padding: '18px', textAlign: 'center', border: `1px solid ${dm ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)'}`, background: dm ? '#1e1e1e' : 'white', boxShadow: dm ? 'none' : '0 1px 4px rgba(0,0,0,0.04)' }),
-    gridKpi: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', marginBottom: '20px' },
+    gridKpi: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '12px', marginBottom: '20px' },
     overlay: {
       position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
       background: 'rgba(0,0,0,0.6)', zIndex: 400,
@@ -266,7 +266,7 @@ export default function Inventario() {
             </div>
             <div style={s.kpiCard(darkMode)}>
               <span className="material-icons" style={{ fontSize: '35px', color: '#FBC02D' }}>warning</span>
-              <p style={{ fontSize: '13px', color: darkMode ? '#aaa' : '#666', marginTop: '8px' }}>Stock Bajo</p>
+              <p style={{ fontSize: '13px', color: darkMode ? '#aaa' : '#666', marginTop: '8px', whiteSpace: 'nowrap' }}>Stock Bajo</p>
               <p style={{ fontSize: '24px', fontWeight: '700', color: '#FBC02D' }}>{resumen.bajo || 0}</p>
             </div>
             <div style={s.kpiCard(darkMode)}>

@@ -67,12 +67,13 @@ export default function Landing() {
           Un sistema profesional y completo, diseñado para adaptarse a la forma de trabajo de cada cliente,
           con una interfaz intuitiva y de facil comprension.
         </p>
-        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', margin: '32px 0 0' }}>
+        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', alignItems: 'stretch', margin: '32px auto 0', maxWidth: '480px' }}>
           <button
             onClick={() => navigate('/app/inicio')}
             style={{
-              padding: '15px 34px', borderRadius: '12px', border: 'none', cursor: 'pointer',
-              background: 'linear-gradient(135deg, #8B1A2B, #B71C1C)', color: 'white',
+              flex: '1', minWidth: '120px', maxWidth: '220px', padding: '15px 12px', borderRadius: '12px',
+              border: 'none', cursor: 'pointer', whiteSpace: 'nowrap',
+              background: 'linear-gradient(135deg, #8B1A2B, #B71C1C)', color: 'white', textAlign: 'center',
               fontWeight: '800', fontSize: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
             }}
           >
@@ -82,7 +83,8 @@ export default function Landing() {
             href="https://wa.me/595992609484?text=Hola!%20Quiero%20saber%20mas%20informacion%20acerca%20de%20KaruAPP"
             target="_blank" rel="noopener noreferrer"
             style={{
-              padding: '15px 34px', borderRadius: '12px', cursor: 'pointer',
+              flex: '1', minWidth: '120px', maxWidth: '220px', padding: '15px 12px', borderRadius: '12px',
+              cursor: 'pointer', whiteSpace: 'nowrap', textAlign: 'center',
               background: '#25D366', color: 'white', fontWeight: '800', fontSize: '16px',
               textDecoration: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.35)',
             }}
