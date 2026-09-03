@@ -17,7 +17,7 @@ const PLANES = [
     nombre: 'Estandar',
     precio: 'desde 350.000 Gs/mes',
     desc: 'El mas vendido. Para locales medianos en crecimiento',
-    incluye: ['Todo lo Basico', 'Delivery', 'Inventario', 'Configuracion', 'Impresion', 'SIFEN (facturacion electronica)', 'Soporte 24/7'],
+    incluye: ['Todo lo Basico', 'Delivery', 'Inventario', 'Configuracion', 'Impresion', 'Soporte 24/7', 'SIFEN (facturacion electronica)'],
     destacado: true,
   },
   {
@@ -26,7 +26,7 @@ const PLANES = [
     nombre: 'Enterprise',
     precio: 'desde 460.000 Gs/mes',
     desc: 'Ideal para negocios profesionales y restaurantes complejos',
-    incluye: ['Todo lo Estandar', 'Carta Digital', 'Reservas', 'Informes', 'SIFEN (facturacion electronica)', 'Soporte 24/7 Prioritario'],
+    incluye: ['Todo lo Estandar', 'Carta Digital', 'Reservas', 'Informes', 'Soporte 24/7 Prioritario', 'SIFEN (facturacion electronica)'],
   },
 ]
 
