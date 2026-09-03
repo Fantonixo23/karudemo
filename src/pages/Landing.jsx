@@ -7,6 +7,8 @@ const FEATURES = [
   { icon: 'delivery_dining', titulo: 'Delivery', desc: 'Pedidos a domicilio con seguimiento de estado.' },
   { icon: 'inventory_2', titulo: 'Productos', desc: 'Catalogo con 20 productos cargados de ejemplo.' },
   { icon: 'analytics', titulo: 'Informes', desc: 'Ventas, productos mas vendidos y reportes.' },
+  { icon: 'menu_book', titulo: 'Menu digital', desc: 'Carta digital con fotos de tus platos, precios y descripciones, que tus clientes ven al escanear un codigo QR.' },
+  { icon: 'event_available', titulo: 'Reservas', desc: 'Gestion de reservas de mesas de forma facil y organizada.' },
 ]
 
 export default function Landing() {
@@ -53,7 +55,7 @@ export default function Landing() {
       <section style={{ textAlign: 'center', padding: '70px 24px 40px', maxWidth: '760px', margin: '0 auto' }}>
         <img src="/logo.png" alt="karuAPP" width="88" height="88" style={{ borderRadius: '20px', boxShadow: '0 4px 14px rgba(0,0,0,0.4)' }} />
         <h1 style={{ fontSize: '42px', fontWeight: '900', margin: '24px 0 12px', letterSpacing: '0.5px' }}>
-          Gestion de restaurant <span style={{ color: '#FF0000' }}>simple y completa</span>
+          KaruAPP, un sistema gastronomico completo
         </h1>
         <p style={{ fontSize: '21px', color: '#fff', lineHeight: 1.5, margin: '0 auto 16px', maxWidth: '560px' }}>
           <span style={{ color: '#FFFFFF', fontWeight: '900', textTransform: 'uppercase' }}>"CONTROLA TU LOCAL DESDE LA PALMA DE TU MANO"</span>
