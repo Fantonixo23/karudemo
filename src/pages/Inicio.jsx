@@ -11,6 +11,7 @@ const API_URL = getApiUrl()
 const s = {
   container: (dm) => ({
     minHeight: '100vh',
+    overflowX: 'hidden',
     background: dm ? '#121212' : '#f0f2f5',
     color: dm ? '#fff' : '#1a1a1a'
   }),
@@ -114,7 +115,7 @@ export default function Inicio() {
               <span className="material-icons">workspace_premium</span>
             </button>
             <div style={{
-              position: 'absolute', top: '46px', left: '50%', transform: 'translateX(-50%)', zIndex: 3000,
+              position: 'absolute', top: '46px', right: 0, zIndex: 3000,
               background: darkMode ? '#2a2a2a' : 'white',
               borderRadius: '12px', padding: '12px 16px',
               boxShadow: '0 10px 40px rgba(0,0,0,0.35)',
