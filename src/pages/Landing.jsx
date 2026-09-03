@@ -55,7 +55,7 @@ export default function Landing() {
       <section style={{ textAlign: 'center', padding: '70px 24px 40px', maxWidth: '760px', margin: '0 auto' }}>
         <img src="/logo.png" alt="karuAPP" width="88" height="88" style={{ borderRadius: '20px', boxShadow: '0 4px 14px rgba(0,0,0,0.4)' }} />
         <h1 style={{ fontSize: '42px', fontWeight: '900', margin: '24px 0 12px', letterSpacing: '0.5px' }}>
-          KaruAPP, un sistema gastronomico completo
+          <span style={{ color: '#FF0000' }}>karuAPP</span> Sistema gastronomico
         </h1>
         <p style={{ fontSize: '21px', color: '#fff', lineHeight: 1.5, margin: '0 auto 16px', maxWidth: '560px' }}>
           <span style={{ color: '#FFFFFF', fontWeight: '900', textTransform: 'uppercase' }}>"CONTROLA TU LOCAL DESDE LA PALMA DE TU MANO"</span>
