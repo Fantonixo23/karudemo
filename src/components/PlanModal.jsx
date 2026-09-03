@@ -26,7 +26,7 @@ const PLANES = [
     nombre: 'Enterprise',
     precio: 'desde 460.000 Gs/mes',
     desc: 'Ideal para negocios profesionales y restaurantes complejos',
-    incluye: ['Todo lo Estandar', 'Carta Digital', 'Reservas', 'Informes', 'SIFEN (facturacion electronica)'],
+    incluye: ['Todo lo Estandar', 'Carta Digital', 'Reservas', 'Informes', 'SIFEN (facturacion electronica)', 'Soporte Prioritario'],
   },
 ]
 
